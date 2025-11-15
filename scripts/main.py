@@ -1,4 +1,7 @@
 import streamlit as st
+import pycron
+import time
+from requests import get
 from env_vars import ENV
 
 if ENV == 'DEV':
@@ -63,3 +66,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    while True:
+        if pycron.is_now('*/13 * * * *'):   # True Every Sunday at 02:00
+            print('running render')
+            response = get("https://birthday-confirmation.onrender.com/")
+            print(f'Render response status code: {response.status_code}')
+        if pycron.is_now('0 0 * * 0'):
+            pass
