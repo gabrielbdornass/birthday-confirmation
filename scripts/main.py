@@ -101,7 +101,7 @@ def main():
 
     # https://www.google.com/maps/place/19%C2%B056'12.9%22S+44%C2%B014'32.6%22W/@-19.936913,-44.242393,797m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d-19.936913!4d-44.242393!17m2!4m1!1e3!18m1!1e1
 
-    components.html(google_maps_iframe, height=450, width=600)
+    components.html(google_maps_iframe, height=375, width=500)
 
     # Google Maps link
     st.markdown(
