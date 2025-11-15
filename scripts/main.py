@@ -67,10 +67,10 @@ def main():
 if __name__ == "__main__":
     main()
 
-    while True:
-        if pycron.is_now('*/13 * * * *'):   # True Every Sunday at 02:00
-            print('running render')
-            response = get("https://birthday-confirmation.onrender.com/")
-            print(f'Render response status code: {response.status_code}')
-        if pycron.is_now('0 0 * * 0'):
-            pass
+    # while True:
+    #     if pycron.is_now('*/13 * * * *'):   # True Every Sunday at 02:00
+    #         print('running render')
+    #         response = get("https://birthday-confirmation.onrender.com/")
+    #         print(f'Render response status code: {response.status_code}')
+    #     if pycron.is_now('0 0 * * 0'):
+    #         pass
