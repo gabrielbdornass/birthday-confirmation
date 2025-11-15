@@ -3,3 +3,4 @@ streamlit==1.41.1
 python-dotenv==1.0.1
 supabase==2.11.0
 taskipy==1.14.1
+pycron==3.2.0
