@@ -32,7 +32,7 @@ def main():
     remove_streamlit_hamburguer()
 
     # 🎤 Cabeçalho da festa
-    st.title("🎉 Renata 40 Anos! 💃✨")
+    st.title("🎉 Renata 40 Anos! 😎✨")
     st.subheader("Festa no ritmo do Axé + Churrasco! 🍖🎶")
 
     st.markdown("""
@@ -82,11 +82,11 @@ def main():
     st.markdown("""
     ### Informações da Festa
 
-    **📅 Data:** 13/12/2025
+    **📅 Data:** 13/12/2025.
 
-    **🕑 Horário:** A partir das 14h
+    **🕑 Horário:** A partir das 14h.
 
-    **📍 Local:** Rua Seis, 225-C, Quintas do Godoy, Betim-MG
+    **📍 Local:** Rua Seis, 225-C, Quintas do Godoy, Betim-MG.
 
     **🍖 Churrasco e 🍻 Bebida gelada!**
 
