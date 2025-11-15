@@ -1,10 +1,10 @@
 import streamlit as st
-from scripts.env_vars import ENV
+from env_vars import ENV
 
 if ENV == 'DEV':
-    from scripts.sqlite_connection import save_to_sqlite as save_to_db
+    from sqlite_connection import save_to_sqlite as save_to_db
 elif ENV == 'PROD':
-    from scripts.supabase_conection import save_to_supabase as save_to_db
+    from supabase_conection import save_to_supabase as save_to_db
 
 def remove_streamlit_hamburguer():
     hide_streamlit_style = """
@@ -19,14 +19,14 @@ def remove_streamlit_hamburguer():
 def main():
 
     st.set_page_config(
-        page_title="Gabriel 40 Anos - Confirme presença nesta festança",
+        page_title="Renata 40 Anos - Confirme presença nesta festança",
         page_icon=":beers:",
         menu_items={}  # Disable the hamburger menu
     )
 
     remove_streamlit_hamburguer()
 
-    st.title(":tada: Gabriel 40 Anos! :beers:")
+    st.title(":tada: Renata 40 Anos! :beers:")
 
     st.write(f"**Confirme presença nesta festança**")
 
@@ -60,7 +60,6 @@ def main():
                     st.write(f"**Acompanhantes:**")
                     for i, name in enumerate(companions, start=1):
                         st.success(f"{i}. {name}")
-        breakpoint()
 
 if __name__ == "__main__":
     main()
