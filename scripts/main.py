@@ -1,9 +1,11 @@
 import streamlit as st
+import os
 import pycron
 import time
 from requests import get
 from env_vars import ENV
 import streamlit.components.v1 as components
+from datetime import datetime
 
 
 if ENV == 'DEV':
@@ -109,16 +111,37 @@ def main():
         unsafe_allow_html=True
     )
 
+    st.markdown("---")
+
+    # Contador regressivo
+    party_date = datetime(2025, 12, 13, 14, 0, 0)  # 13/12/2025 às 14:00
+    now = datetime.now()
+
+    days_left = (party_date - now).days
+
+    if days_left > 0:
+        st.markdown(f"""
+        ## ⏳ Contagem Regressiva
+        **Faltam `{days_left}` dia(s) para minha festa de 40 Anos!** 🎉🔥
+        Prepare o quadril, porque vai ter muito axé! 💃🪩
+        """)
+    else:
+        st.markdown("""
+        ## 🎊 Chegou o grande dia!!!
+        Bora comemorar com muito Axé e Churrasco! 🍖🎶
+        """)
+
 
 if __name__ == "__main__":
     main()
 
-    # while True:
+    while True:
 
-    #     if pycron.is_now('*/5 * * * *'):   # True Every Sunday at 02:00
-    #         print('running render')
-    #         response = get("https://birthday-confirmation.onrender.com/")
-    #         print(f'Render response status code: {response.status_code}')
-    #         time.sleep(60)
-    #     if pycron.is_now('0 0 * * 0'):
-    #         pass
+        if pycron.is_now('*/5 * * * *'):   # True Every Sunday at 02:00
+            print('running render')
+            response = get("https://birthday-confirmation.onrender.com/")
+            print(f'Render response status code: {response.status_code}')
+            time.sleep(60)
+        if pycron.is_now('0 0 * * 0'):
+            print('running supabase')
+            os.system('python scripts/supabase_api.py')
