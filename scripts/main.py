@@ -135,13 +135,13 @@ def main():
 if __name__ == "__main__":
     main()
 
-    while True:
+    # while True:
 
-        if pycron.is_now('*/5 * * * *'):   # True Every Sunday at 02:00
-            print('running render')
-            response = get("https://birthday-confirmation.onrender.com/")
-            print(f'Render response status code: {response.status_code}')
-            time.sleep(60)
-        if pycron.is_now('0 0 * * 0'):
-            print('running supabase')
-            os.system('python scripts/supabase_api.py')
+    #     if pycron.is_now('*/5 * * * *'):   # True Every Sunday at 02:00
+    #         print('running render')
+    #         response = get("https://birthday-confirmation.onrender.com/")
+    #         print(f'Render response status code: {response.status_code}')
+    #         time.sleep(60)
+    #     if pycron.is_now('0 0 * * 0'):
+    #         print('running supabase')
+    #         os.system('python scripts/supabase_api.py')
